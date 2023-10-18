@@ -29,15 +29,15 @@ fn play_round_one(input: String) -> i32 {
   score += get_score_for_move_round_one(my_move);
   score += get_score_for_match_round_one(turns);
 
-  return score;
+  score
 }
 
 fn get_score_for_move_round_one(my_move: &char) -> i32 {
   match my_move {
-    'X' => return 1,
-    'Y' => return 2,
-    'Z' => return 3,
-    _ => return 0,
+    'X' => 1,
+    'Y' => 2,
+    'Z' => 3,
+    _ => 0,
   }
 }
 
@@ -72,7 +72,7 @@ fn get_score_for_match_round_one(input: Vec<&char>) -> i32 {
     _ => score = 0,
   }
 
-  return score;
+  score
 }
 
 // ----------------------------------
@@ -99,7 +99,7 @@ fn play_round_two(input: String) -> i32 {
   score += get_score_for_move_round_two(turns);
   score += get_score_for_match_round_two(my_move);
 
-  return score;
+  score
 }
 
 fn get_score_for_move_round_two(input: Vec<&char>) -> i32 {
@@ -134,17 +134,17 @@ fn get_score_for_move_round_two(input: Vec<&char>) -> i32 {
       'C' => score = 1,
       _ => score = 0,
     },
-    _ => return 0,
+    _ => score = 0,
   }
 
-  return score;
+  score
 }
 
 fn get_score_for_match_round_two(my_move: &char) -> i32 {
   match my_move {
-    'X' => return 0,
-    'Y' => return 3,
-    'Z' => return 6,
-    _ => return 0,
+    'X' => 0,
+    'Y' => 3,
+    'Z' => 6,
+    _ => 0,
   }
 }
